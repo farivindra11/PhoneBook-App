@@ -20,11 +20,11 @@ router.get('/', function (req, res) {
 router.post('/', function (req, res) {
   const userName = req.body.username;
   const name = req.body.name;
-  const age = req.body.age;
+  const phone = req.body.phone;
 
   const referencePath = '/Users/'+userName+'/';
   const userReference = firebase.database().ref(referencePath);
-  userReference.set({Name: name, Age: age}, function(error) {
+  userReference.set({Name: name, Phone: phone}, function(error) {
     if (error) {
       res.send("Data could not be saved." + error);
     } else {

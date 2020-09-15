@@ -8,7 +8,7 @@ const getUsers = () => {
       if (folders === null) {
         resolve([]);
       }else{
-        const data = Object.keys(folders).map(o => Object.assign({ userName: o }, folders[o]));
+        const data = Object.keys(folders).map(o => Object.assign({ id: o }, folders[o]));
         resolve(data);
       }
       userReference.off("value");
@@ -21,7 +21,7 @@ const getUsers = () => {
 
 //Create new instance
 const createUser = (user) => {
-  const referencePath = `/Users/${user.userName}/`;
+  const referencePath = `/Users/${user.id}/`;
   const userReference = firebase.database().ref(referencePath);
   return (new Promise((resolve, reject) => {
     userReference.set({Name: user.Name, Phone: user.Phone}, (error) => {
@@ -36,7 +36,7 @@ const createUser = (user) => {
 
 //Update existing instance
 const updateUser = (user) => {
-  var referencePath = `/Users/${user.userName}/`;
+  var referencePath = `/Users/${user.id}/`;
   var userReference = firebase.database().ref(referencePath);
   return (new Promise((resolve, reject) => {
     userReference.update({Name: user.Name, Phone: user.Phone}, (error) => {
@@ -51,7 +51,7 @@ const updateUser = (user) => {
 
 //Delete an instance
 const deleteUser = (user) => {
-  var referencePath = `/Users/${user.userName}/`;
+  var referencePath = `/Users/${user.id}/`;
   var userReference = firebase.database().ref(referencePath);
   return (new Promise((resolve, reject) => {
     userReference.remove((error) => {

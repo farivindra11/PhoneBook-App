@@ -28,6 +28,12 @@ exports.queryType = new GraphQLObjectType({
               items: data.list,
               result: data.result
             }
+          } else {
+            const data = await getUsers(offset, limit)
+            return{
+              items: data.list,
+              result: data.result
+            }
           }
         }
       }

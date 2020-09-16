@@ -1,6 +1,4 @@
-
-var GraphQLNonNull = require('graphql').GraphQLNonNull;
-var GraphQLString = require('graphql').GraphQLString;
+const{GraphQLNonNull,GraphQLString,GraphQLID, GraphQLInt}=require('graphql')
 var UserType = require('../types/user');
 var services = require('../../services');
 
@@ -8,7 +6,7 @@ exports.add = {
   type: UserType.userType,
   args: {
     id: {
-      type: new GraphQLNonNull(GraphQLString),
+      type: new GraphQLNonNull(GraphQLID),
     },
     Name: {
       type: new GraphQLNonNull(GraphQLString),

@@ -26,7 +26,7 @@ const getUsers = (offset, limit) => {
 }
 
 // search 
-const serachUsers = (name, phone, offset, limit) => {
+const searchUsers = (name, phone, offset, limit) => {
 
   const regName = new RegExp(name, 'ig')
   const regPhone = new RegExp(phone, 'g')
@@ -115,4 +115,4 @@ const deleteUser = (user) => {
   }));
 }
 
-module.exports = {getUsers, createUser, updateUser, deleteUser, serachUsers}
+module.exports = {getUsers, createUser, updateUser, deleteUser, searchUsers}

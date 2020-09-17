@@ -10,7 +10,7 @@ exports.queryType = new GraphQLObjectType({
   fields: function () {
     return {
       users: {
-        type: new PaginatedListType(userType),
+        type: PaginatedListType(userType),
         args: {
           name: { type: GraphQLString },
           phone: { type: GraphQLString },

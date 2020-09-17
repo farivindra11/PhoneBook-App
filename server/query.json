@@ -1,0 +1,32 @@
+query {
+    users(pagination: {offset: 0, limit: 5
+    }) {
+       result
+       items{
+          Name
+          Phone
+        }
+    }
+}
+
+mutation {
+    addUser(id: "1", Name: "Denis", Phone: "098383747937") {
+      id
+      Name
+      Phone
+    }
+}
+
+  mutation {
+    updateUser(id: "1", Name: "Denis Laminating", Phone: "087889657432") {
+      id
+      Name
+      Phone
+    }
+}
+
+mutation {
+    removeUser(id: "1") {
+      id
+    }
+}

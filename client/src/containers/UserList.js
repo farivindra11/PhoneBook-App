@@ -37,8 +37,9 @@ class UserList extends Component {
 
         return (
             <div>
+              <div className="table-wrapper">
               <table className="table table-striped table-light centering  table-hover">
-                <thead>
+                <thead className="thead-dark">
                   <tr className='table-secondary'>
                     <th scope="col">No</th>
                     <th scope="col">Name</th>
@@ -50,6 +51,7 @@ class UserList extends Component {
                   {nodes}
                 </tbody>
               </table>
+              </div>
             </div>
           )
         }
@@ -58,7 +60,7 @@ class UserList extends Component {
 
 
 const mapStateToProps = ({ users }) => ({ stateFromMaps: users })
-const mapDispatchToProps = (dispatch) => ({ loadUserFormMap: () => dispatch(loadUser()) })
+const mapDispatchToProps = (dispatch) => ({ loadUserFormMap: () => dispatch(loadUser())})
 
 export default connect(
   mapStateToProps,

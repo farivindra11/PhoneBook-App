@@ -1,4 +1,4 @@
-import React, { Components } from 'react';
+import React, { Component } from 'react';
 import User from './UserActive'
 import EditForm from './EditForm'
 import { connect } from 'react-redux'
@@ -16,7 +16,7 @@ class UserList extends Component {
               <EditForm
                 key={index}
                 index={this.props.stateFromMaps.offset + index + 1}
-                phone={item.Phone}
+                user={item.Phone}
                 Name={item.Name}
                 added={item.added}
                 id={item.id}
@@ -24,10 +24,10 @@ class UserList extends Component {
               />)
             :
             (
-              <Phone
+              <User
                 key={index}
                 index={this.props.stateFromMaps.offset + index + 1}
-                phone={item.Phone}
+                user={item.Phone}
                 Name={item.Name}
                 added={item.added}
                 id={item.id}

@@ -2,7 +2,7 @@ import ApolloClient from 'apollo-boost';
 import gql from 'graphql-tag'
 import Swal from 'sweetalert2'
 
-const API_URL = 'http://localhost3000/graphql/'
+const API_URL = 'http://localhost:3000/graphql/'
 
 const client = new ApolloClient({
     uri: API_URL
@@ -152,7 +152,7 @@ export const postUserSuccess = (users) => ({
               dangerMode: true,
               timer: 1500
             }).then(() => {
-              dispatch(postPhoneFailure(id))
+              dispatch(postUserFailure(id))
             })
   
           });
@@ -230,8 +230,8 @@ const resendUserSuccess = (id) => ({
 
   export const resendUser = (Phone, Name, id) => {
     const addQuery = gql`
-    mutation addContact($Phone: String!, $Name: String!,$id:ID!) {
-      addContact(Phone: $Phone, Name: $Name,id:$id) {
+    mutation addUser($Phone: String!, $Name: String!,$id:ID!) {
+      addUser(Phone: $Phone, Name: $Name,id:$id) {
         Phone
         Name
       }
@@ -298,11 +298,11 @@ const resendUserSuccess = (id) => ({
     Name
   })
   
-  const updatePhoneSuccess = (phone) => ({
+  const updateUserSuccess = (phone) => ({
     type: 'UPDATE_USER_SUCCESS',
     phone
   })
-  const updatePhoneFailure = (id) => ({
+  const updateUserFailure = (id) => ({
     type: "UPDATE_USER_FAILURE",
     id
   })
@@ -335,7 +335,7 @@ const resendUserSuccess = (id) => ({
           }
         })
       }).then(function (response) {
-        dispatch(updatePhoneSuccess(response.data))
+        dispatch(updateUserSuccess(response.data))
       }).catch(function (error) {
         Swal.fire({
           icon: 'warning',
@@ -346,7 +346,7 @@ const resendUserSuccess = (id) => ({
           dangerMode: true,
           timer: 1500
         }).then(() => {
-          dispatch(updatePhoneFailure(id))
+          dispatch(updateUserFailure(id))
         })
       })
     }

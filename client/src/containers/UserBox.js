@@ -14,8 +14,8 @@ class UserBox extends Component {
     }
 }
 
-const mapStateToProps = ({ phones }) => {
-    const {isActive}=phones
+const mapStateToProps = ({ users }) => {
+    const {isActive}= users
     return { stateFromMaps: isActive } 
   }
   

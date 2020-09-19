@@ -141,8 +141,31 @@ const users = (state = globalState, action) => {
                 offset: action.offset
 
             }
-        default:
-            return state
+            case 'SWITCH_PAGE':
+      return {
+        ...state,
+        currentPage: action.switchToPage,
+        offset: action.offset
+
+      }
+    case 'MODE_SEARCH_ACTIVE':
+      return {
+        ...state,
+        isSearchModeOn: true,
+        searchName: action.filter.name,
+        searchPhone: action.filter.user
+      }
+    case 'MODE_SEARCH_INACTIVE':
+      return {
+        ...state,
+        isSearchModeOn: false,
+        searchName: "",
+        searchPhone: ""
+      }
+    case 'LOAD_USER_FAILURE':
+    case 'DELETE_USER_FAILURE':
+    default:
+      return state
     }
 }
 

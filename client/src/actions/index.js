@@ -2,7 +2,7 @@ import ApolloClient from 'apollo-boost';
 import gql from 'graphql-tag'
 import Swal from 'sweetalert2'
 
-const API_URL = 'http://localhost:3000/graphql/'
+const API_URL = 'http://localhost:3001/graphql/'
 
 const client = new ApolloClient({
     uri: API_URL
@@ -224,7 +224,7 @@ const deleteUserRedux = (id) => ({
 // end delete user data
 
 const resendUserSuccess = (id) => ({
-    type: 'RESEND_PHONE_SUCCESS',
+    type: 'RESEND_USER_SUCCESS',
     id
   })
 

@@ -8,7 +8,7 @@ const User = (props) => {
       <td>{props.Name}
 
       </td>
-      <td>{props.phone}</td>
+      <td>{props.user}</td>
       <td>
         {props.added && <button type="button" className="btn btn-outline-danger del" onClick={props.onDelete} >  <i className="far fa-trash-alt"></i> </button>}
         {!props.added && <button type="button" className="btn btn-outline-warning del" onClick={props.resend}><i className="fas fa-redo-alt"></i> Resend </button>}

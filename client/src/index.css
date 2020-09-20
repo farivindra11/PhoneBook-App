@@ -68,7 +68,7 @@ code {
   width: 100%;
   margin:auto;
   background: rgb(238, 238, 238);
-  padding: 50px;	
+  padding: 10px;
   box-shadow: 0px 1px 1px 0px rgba(0,0,0,0.3);
   border-radius: 20px;
 }
@@ -80,12 +80,20 @@ code {
 
 /* table */
 .add{
+
   margin-top: -50px;
-  margin-left: 430px;
+  margin-left: -530px;
+  position: absolute;
 }
 .del{
   margin: 5px;
 }
 .centering {
   text-align: center
+}
+.addc {
+  margin: 5px;
+}
+.reset {
+  margin-right: 100px;
 }

@@ -37,7 +37,6 @@ class UserList extends Component {
 
         return (
             <div>
-              <div className="table-wrapper">
               <table className="table table-striped table-light centering  table-hover">
                 <thead className="thead-dark">
                   <tr className='table-secondary'>
@@ -51,7 +50,6 @@ class UserList extends Component {
                   {nodes}
                 </tbody>
               </table>
-              </div>
             </div>
           )
         }

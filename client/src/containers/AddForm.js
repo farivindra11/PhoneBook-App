@@ -30,7 +30,7 @@ class Addform extends Component {
     handleSubmit(event) {
        
         if (this.state.Phone && this.state.Name) {
-            this.props.postUSer(this.state.Phone, this.state.Name)
+            this.props.postUser(this.state.Phone, this.state.Name)
             this.setState({ Phone: "", Name: "" });
         }
         event.preventDefault();
@@ -40,7 +40,7 @@ class Addform extends Component {
         return (
             <div className="card">
                 <div className="card-header text-center font-weight-bold">
-                        ADD CONTACT
+                        ADD NEW CONTACT
                      </div>
                      <div className="card-body">
                         <form onSubmit={this.handleSubmit} className="form-inline justify-content-center">
@@ -59,9 +59,9 @@ class Addform extends Component {
 
                             <div className="form-group row align-self-center">
                                 <div className="col-sm-12">
-                                    <button type="button" className="btn btn-warning  btn-cancel float-right" onClick={this.handleClick}><i className="fa fa-ban"></i> Cancel </button>
+                                    <button type="button" className="btn btn-warning  btn-cancel float-right addc" onClick={this.handleClick}><i className="fa fa-ban"></i> Cancel </button>
 
-                                    <button type="submit" className="btn btn-primary  btn-add float-right"> <i className="fa fa-floppy-o"></i> Save</button>
+                                    <button type="submit" className="btn btn-primary  btn-add float-right addc"> <i className="fa fa-floppy-o"></i> Save</button>
                                 </div>
                             </div>
 
